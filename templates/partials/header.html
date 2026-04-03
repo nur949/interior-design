@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg navbar-light py-3 sticky-top glass-nav">
+  <div class="container">
+    <a class="navbar-brand brand-title" href="/">{{ site_settings.site_name|default:'Atelier Habitat' }}</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav mx-auto gap-lg-2 align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/blog/">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="/furniture/">Furniture</a></li>
+        <li class="nav-item"><a class="nav-link" href="/portfolio/">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li>
+      </ul>
+      <form class="d-flex nav-search" action="/search/">
+        <input name="q" class="form-control rounded-pill search-input" placeholder="Search stories, projects..." aria-label="Search">
+      </form>
+      <button class="theme-toggle ms-3" onclick="toggleTheme()" aria-label="Toggle theme">◐</button>
+    </div>
+  </div>
+</nav>
+{% if messages %}<div class="container pt-3">{% for message in messages %}<div class="alert alert-success">{{ message }}</div>{% endfor %}</div>{% endif %}

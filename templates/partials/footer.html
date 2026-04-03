@@ -1,0 +1,25 @@
+<footer class="footer-section">
+  <div class="container py-5">
+    <div class="row g-4 align-items-start">
+      <div class="col-lg-4">
+        <h3 class="brand-title footer-title mb-3">{{ site_settings.site_name }}</h3>
+        <p class="footer-copy">{{ site_settings.tagline }}</p>
+        <p class="text-muted mb-0">Luxury-inspired interiors, curated furniture, and editorial storytelling in one polished studio presence.</p>
+      </div>
+      <div class="col-lg-4">
+        <h6 class="section-kicker">Newsletter</h6>
+        <p class="text-muted">Get new articles, project updates, and launch notes straight to your inbox.</p>
+        <form class="d-flex gap-2 flex-wrap" method="post" action="{% url 'newsletter_subscribe' %}">{% csrf_token %}
+          <input class="form-control rounded-pill flex-grow-1" name="email" type="email" required placeholder="Email address">
+          <button class="btn btn-dark rounded-pill">Join</button>
+        </form>
+      </div>
+      <div class="col-lg-4 footer-contact">
+        <h6 class="section-kicker">Contact</h6>
+        <p class="mb-1">{{ site_settings.contact_email }}</p>
+        <p class="mb-1">{{ site_settings.phone }}</p>
+        <p>{{ site_settings.address }}</p>
+      </div>
+    </div>
+  </div>
+</footer>
