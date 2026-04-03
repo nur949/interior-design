@@ -4,11 +4,7 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY', 'dev-secret-key-change-me')
 DEBUG = os.getenv('DEBUG', 'True') == 'True'
-ALLOWED_HOSTS = [
-    '127.0.0.1',
-    'localhost',
-    'interior-design1-3v1b.onrender.com'
-]CSRF_TRUSTED_ORIGINS = [u for u in os.getenv('CSRF_TRUSTED_ORIGINS', '').split(',') if u]
+ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
